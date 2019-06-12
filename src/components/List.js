@@ -1,7 +1,19 @@
 import React from 'react';
 import { ListGroup, ListGroupItem } from 'reactstrap';
+import styled from 'styled-components';
 
 import InputForm from './Input';
+
+const DivWrapper = styled.div`
+  width: 50%;
+  margin: 0 auto;
+  `;
+
+const Header = styled.h1`
+  font: helvetica;
+  font-size: 40px;
+  font-align: center;
+`;
 
 class List extends React.Component {
   constructor(props) {
@@ -33,16 +45,16 @@ class List extends React.Component {
   }
 
 
-
   render() {
     const toDoList = this.state.toDo.map(e => <ListGroupItem>{e.item}</ListGroupItem>)
     return (
-      <div className="list-container">
+      <DivWrapper>
+        <Header>To Do App</Header>
         <ListGroup>
           {toDoList}
         </ListGroup>
         <InputForm value={this.state.item} updateNewToDo={this.updateHolder} submit={this.submitItem} />
-      </div>
+      </DivWrapper>
     )
   }
 }

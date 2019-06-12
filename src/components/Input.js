@@ -1,6 +1,11 @@
 import React from 'react';
 import { Button, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import styled from 'styled-components';
 
+const GreenButton = styled(Button)`
+  background-color: #8CDD81;
+  color: white;
+`;
 
 const InputForm = (props) => {
   return (
@@ -11,7 +16,7 @@ const InputForm = (props) => {
         onChange={props.updateNewToDo}
         name='item'
       />
-      <InputGroupAddon addonType="append"><Button onClick={props.submit}>Add To Do</Button></InputGroupAddon>
+      <InputGroupAddon addonType="append"><GreenButton onClick={props.submit}>Add To Do</GreenButton></InputGroupAddon>
     </InputGroup>
   )
 }
